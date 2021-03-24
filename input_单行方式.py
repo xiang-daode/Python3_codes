@@ -1,0 +1,5 @@
+# 在这里写上你的代码 :-)
+print(int(input('你想输入的整数是？')))
+print(float(input('你想输入的数字,可以是小数:')))
+print(bytes(input('你想查看内码?输入的汉字是:'),"GBK"))
+print(bin(int(input('你想看到二进制? 输入一个整数:'))))
