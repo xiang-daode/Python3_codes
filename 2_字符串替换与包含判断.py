@@ -1,0 +1,15 @@
+#!/usr/bin/python
+# -*- coding: cp936 -*-
+
+#Ìæ»»×Ö·û´®:
+a = "abccdef"
+b = a.replace("c", "*")
+print(b)
+
+#°üº¬ÅÐ¶Ï:
+c="def"
+d=c in a
+print(d)
+
+
+
