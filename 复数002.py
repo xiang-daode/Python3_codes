@@ -1,0 +1,9 @@
+# 复数的计算:
+a=3+4j #复数
+b=3-4j #复数
+print(a+b) #复数加法
+print(a-b) #复数减法
+print(a*b) #复数乘法
+print(a/b) #复数除法
+print(a*a+b*b) #复数混合运算
+# a=a*a+b

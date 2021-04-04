@@ -1,6 +1,6 @@
 # 1~9999各数位数字之和
 
-for i in range(1, 9999):
+for i in range(1, 9999+1):
     num = len(str(i))
     if (num == 1):
         sum=i
@@ -21,5 +21,5 @@ for i in range(1, 9999):
         b = (i - a * 1000) // 100
         c = (i - a * 1000 - b * 100) // 10
         d = i % 10
-        sum=a+b+c
+        sum=a+b+c+d
         print(sum)
