@@ -63,7 +63,7 @@ class bmp:
         for r in range(self.h):
             self.rgbDataRow = []
             for c in range(self.w):
-                color=color ^ (3*c % 256+4*r % 256)
+                color=color ^ ((c*r)% 256)
                 self.rgbDataRow.append(color)
             self.rgbData.append(self.rgbDataRow)
 
