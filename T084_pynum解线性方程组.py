@@ -19,3 +19,5 @@ print(x)
  [2.]
  [3.]]
 '''
+
+print(help(np.linalg.solve))

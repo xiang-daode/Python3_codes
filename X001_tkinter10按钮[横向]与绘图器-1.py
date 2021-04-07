@@ -5,13 +5,15 @@ import tkinter as tk
 root = tk.Tk()
 
 root.title("数学函数作图器")
-w = tk.Canvas(root, width =800, height = 500)
+w = tk.Canvas(root, width =900, height = 600)
 w.pack()
 x0,y0=400,300
+lb=tk.Label(text="---------by daode1212  2021-04-06-----------", fg="black", bg="white").pack(side='bottom')
 
 def myDraw1():
     w.create_line(0, 300, 800, 300, fill = "red", dash = (2, 2))
     w.create_line(400, 0, 400, 600, fill = "blue", dash = (3, 3))
+    w.create_text(80,20,text='画二条线段作坐标轴')
 def myDraw2():
     w.create_rectangle(x0-5, y0-5, x0+5, y0+5, fill = "red")
 
@@ -34,7 +36,7 @@ def myDraw6():
        x1,x2=x-5,x+5
        y1,y2=y0-r*math.sin(x/100) ,y0+r*math.sin(x/100)
        w.create_rectangle(x1, y1, x2, y2, fill = "#00FF44")
-
+       w.create_text(80,40,text='这是绿色的矩形所组成的')
 
 def myDrawA():
     import math
@@ -61,6 +63,7 @@ def myDrawC():
        w.create_rectangle(x1, y1, x2, y2, fill = "#F40F04")
 
 def myDel():
+    print('删除全部')
     #按序号逐一删除的用:
     #for i in range(5):
     #    w.delete(i)

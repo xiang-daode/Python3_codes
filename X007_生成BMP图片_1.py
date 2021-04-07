@@ -60,10 +60,22 @@ class bmp:
 
     def paint_bgcolor2(self, color=0xffffff):
         self.rgbData = []
-        for r in range(self.h):
+        for yi in range(self.h):
             self.rgbDataRow = []
-            for c in range(self.w):
-                color=color ^ ((c*r)% 256)
+            y=3*yi/self.h
+            for xi in range(self.w):
+                x=3*xi/self.w
+                #color=color ^ ((c*r)% 256)
+                cx,cy=x-1.5,y-1.5
+                for i in range(10):
+                    xx=cx*cx-cy*cy+0.42333
+                    yy=2*cx*cy-0.31444
+                    rr=xx**2+yy**2
+                    cx,cy=xx,yy
+                    color=int(0xfff000*yy+0xfff*xx)%0xffffff
+                    if rr>25:
+                        color=int(0x000110*yy+0x000011*xx)%0xffffff
+                        break                
                 self.rgbDataRow.append(color)
             self.rgbData.append(self.rgbDataRow)
 
@@ -116,11 +128,20 @@ if __name__ == '__main__':
     image.print_bmp_header()
 
     #image.paint_bgcolor(0xc0c0c0)
-    image.paint_bgcolor2(0xc0c0c0)
+    image.paint_bgcolor2(0xc0c0c0) #分形图
 
-    image.paint_line(250, 0, 250, 500, 0xff0000)
-    image.paint_line(0, 250, 500, 250, 0x00ff00)
-    image.paint_rect(225, 225, 50, 50, 0x0000ff)
+    #image.paint_line(250, 0, 250, 500, 0xff0000)
+    #image.paint_line(0, 250, 500, 250, 0x00ff00)
+    #image.paint_rect(225, 225, 50, 50, 0x0000ff)
 
-    image.save_image("生成BMP图片_0.bmp")
-    print("生成BMP图片_0.bmp---就绪")
+    image.save_image("X007.bmp")
+    print("X007.bmp---OK")
+
+    import os
+    os.system('C:\\Windows\\System32\\mspaint.exe X007.bmp')
+
+
+
+
+
+    
