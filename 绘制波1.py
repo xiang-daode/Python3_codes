@@ -1,16 +1,17 @@
 # 绘制波
 import math
 from turtle import *
+
 color('black', 'blue')
 
-v=0
-
 up()
-setpos(300,0)
+setpos(315,0)
 pd()
-while v<600:
-    x=v-300.0
-    y=100*math.sin(x/30)+50*math.cos(x/10)
+
+v=0
+while v<630:
+    x=v-315
+    y=100*math.sin(x/50)
     setx(x)
     sety(y)
     v=v+3
