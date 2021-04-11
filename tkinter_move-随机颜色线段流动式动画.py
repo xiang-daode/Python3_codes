@@ -13,12 +13,12 @@ canvas.pack()
 # photo1 =PhotoImage(file = "Q.png")
 
 for t in range(0,3600,1):# 总循环多少次
-    for k in range(t-25,t+25):# 每次生成多少个
-        xt=600*(1+math.cos(k/32.3))
-        yt=400*(1+math.sin(k/23.7))
+    for k in range(t-15,t+15):# 每次生成多少个
+        xt=600*(1+math.cos(k/123))
+        yt=400*(1+math.sin(k/137))
         k2=k+1
-        xt2=600*(1+math.cos(k2/32.3))
-        yt2=400*(1+math.sin(k2/23.7))
+        xt2=600*(1+math.cos(k2/123))
+        yt2=400*(1+math.sin(k2/137))
         #生成随机颜色:
         rgb1='#' + str(hex(rnd.randint(0x100000, 0xffffff)))[2:]
         rgb2 ='#' + str(hex(rnd.randint(0x100000, 0xffffff)))[2:]
@@ -28,7 +28,7 @@ for t in range(0,3600,1):# 总循环多少次
         canvas.update()
     # 暂停n秒，然后删除图像:
     # time.sleep(0.001)
-    for k in range(t-25,t+25):
+    for k in range(t-15,t+15):
         canvas.delete("pic"+str(k))
         canvas.delete("pic_"+str(k))
 root.mainloop()
