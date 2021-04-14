@@ -36,13 +36,14 @@ def myDrawA():
 #动画绘制函数-B:
 def myDrawB():
     r = 250
-    for x in range(-200,200,3):
+    for y in range(0,88*8,1):
         w.delete("all")
         u=3600
+        dy=y % 44 if y%88<44 else 44-(y % 44)
         while u > 0:
             x1, y1 = x0, y0
             x2, y2 = x0 + r * math.cos(u / 45), y0 + r * math.sin(u / 60)
-            w.create_line(x1, y1+x, x2, y2+x, fill="#FF4400", width=8)
+            w.create_line(x1, y1+dy, x2, y2+dy, fill="#44FF00", width=8)
             u -= 15
         w.update()
         time.sleep(0.001)
@@ -58,7 +59,7 @@ def myDrawC():
             x2, y2 = r * math.cos(u / 45), r * math.sin(u / 60)
             x3=x0+x2*math.cos(g / 45)-y2*math.sin(g / 45)
             y3=y0+x2*math.sin(g / 45)+y2*math.cos(g / 45)
-            w.create_line(x1, y1, x3, y3, fill="#FF4400", width=8)
+            w.create_line(x1, y1, x3, y3, fill="#4400FF", width=8)
             u -= 15
         w.update()
         time.sleep(0.001)
