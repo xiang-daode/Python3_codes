@@ -1,5 +1,4 @@
 # 在这里写上你的代码 :-)
-# 在这里写上你的代码 :-)
 import math
 import time
 from tkinter import *
