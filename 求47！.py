@@ -2,9 +2,11 @@
 import math
 
 print(math.factorial(47))
+
+#自己写函数的:
 #i=1
-#sum=1
+#f=1
 #while i<48:
-#    sum=sum*i
+#    f=f*i
 #    i=i+1
-#print(sum)
+#print(f)

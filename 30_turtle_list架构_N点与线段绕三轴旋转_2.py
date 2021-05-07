@@ -28,6 +28,15 @@ L.append([-s, -s, -s])
 L.append([-s, s, -s])
 L.append([s, s, -s])
 L.append([s, s, s])
+
+#===== 锥面曲线 =======
+for g in range(0,360,1):
+    q=3.1416*g/180
+    x=g*math.cos(q *13)/5
+    y=g*math.sin(q *13)/5
+    z=g/2
+    L.append([x,y,z-390])
+
 '''
 #===== 球面曲线 =======
 for g in range(0,360,1):
@@ -37,13 +46,7 @@ for g in range(0,360,1):
     z=s*math.sin(q * 3)
     L.append([x,y,z])
 
-#===== 锥面曲线 =======
-for g in range(0,360,1):
-    q=3.1416*g/180
-    x=g*math.cos(q *13)/5
-    y=g*math.sin(q *13)/5
-    z=g/2
-    L.append([x,y,z-390])
+
 
 
 #=================================
@@ -67,20 +70,21 @@ def main(m, L):
 
         # 绕X旋转:
         x3 = x2
-        y3 = y2 * math.cos(-0.15) - z2 * math.sin(-0.15)
-        z3 = y2 * math.sin(-0.15) + z2 * math.cos(-0.15)
+        y3 = y2 * math.cos(m / 47) - z2 * math.sin(m / 47)
+        z3 = y2 * math.sin(m / 47) + z2 * math.cos(m / 47)
 
         # 配色,绘制:
-        pencolor((x1 / 7) % 1, (y1 / 13) % 1, (z1 / 17) % 1)
+        far=(z3+250)/500
+        pencolor(far, far, far)
 
         if t == 0:
             pu()
             goto(x3, y3)
         else:
-            pensize(2) #线段粗细
+            pensize(8-8*far) #线段粗细
             pd()
             goto(x3, y3)
-            dot(5)  # 画球半径
+            dot(12-8*far)  # 画球半径
     update()  # 更新画布
     m -= 1
     # 递归:
