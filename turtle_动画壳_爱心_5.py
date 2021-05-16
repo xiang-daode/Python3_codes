@@ -3,30 +3,21 @@ from  turtle import *
 import math
 import sys
 
-#修改最大递归层数到0xffffff
-sys.setrecursionlimit(0xffffff)
-screensize(1080, 900, "#000")
 k=1 #<<====全局变量======
-
 def DrawLoop():
     global k #<<====全局变量======
     clear() #<<=====清空画布=====
 
-
     #画图开始:-----------------------------
-    for m in range(-185,185,3):
-        x=m*math.cos(m/39)+100*math.cos(k/47)
-        y=m*math.sin(m/39)+100*math.sin(k/47)
-        #线段集:
-        pu();pensize(4)
-        goto(x*math.cos(k/38)-y*math.sin(k/38),x*math.sin(k/38)+y*math.cos(k/38))
-        pencolor("#"+hex(0x100000+(m**4) % 0xEFFFFF)[2:]);pd()
-        goto(x*math.cos(k/39)-y*math.sin(k/39),x*math.sin(k/39)+y*math.cos(k/39))
+    for m in range(-185,185,5):
+        x=m*math.cos(k/10+m/18)
+        y=m*math.sin(k/10+m/24)
+
         #填充多边形:
         begin_fill()
-        lt(.5)
+        lt(.1);goto(x,y)
         fillcolor("#"+hex(0x100000+(m**4) % 0xEFFFFF)[2:])
-        circle(15,steps=3)
+        circle(17,steps=3)
         end_fill()
     #画图结束-----------------------------
 
