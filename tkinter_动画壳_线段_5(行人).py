@@ -7,11 +7,11 @@ from tkinter import *
 
 # 使用tkinter绘图:
 root =Tk()
-canvas =Canvas(width=1200, height=800, bg='white')
+canvas =Canvas(width=1200, height=800, bg='#335588')
 canvas.pack()
 PI=3.14159265
 # 每次的移动:
-for t in range(0,3000,2):
+for t in range(0,9000,5):
         g1=0.5*math.sin(t/33)+PI/2
         g2=math.sin(t/33)+PI/2-.75
         x0=t%1200
