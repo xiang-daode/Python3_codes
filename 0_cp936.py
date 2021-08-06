@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# -*- coding: cp936 -*-
-
-print('Æì¿ªµÃÊ¤£¡')
+print('æ——å¼€å¾—èƒœï¼')
 
 
