@@ -10,16 +10,30 @@ x0=600;y0=400;xa=x0;yb=y0
 canvas.create_oval(x0-225,    y0-225,    x0+225,    y0+225,
 tag="p_" + str(0), width=1, fill="#006")
 
+def sign(x):
+    if x>0:
+        return 1
+    if x<0:
+        return -1
+    if x==0:
+        return 0
+
 s=0.0
 while s<3600: #总时间控制
     s=s+0.01 #旋转速度
     for t in range(0, 3600, 5):  # 总循环多少次
-        g=s+t/3600;R=225
+        g=s+t/1800;
 
-        #生成球面曲线点：
-        xc=R*cos(g*24)*cos(g*3)
-        yc=R*sin(g*24)*cos(g*3)
-        zc=R*sin(g*3)
+        #生成曲线点：
+        R=225
+        xc=cos(g*17)*cos(g*19)
+        yc=sin(g*17)*cos(g*19)
+        zc=sin(g*19)
+
+        #项氏方化变换：
+        xc=R*sign(xc)*pow(xc*xc,0.01)
+        yc=R*sign(yc)*pow(yc*yc,0.01)
+        zc=R*sign(zc)*pow(zc*zc,0.01)
 
         #绕Z轴旋转空间点：
         x1=xc*cos(s/2)-yc*sin(s/2)

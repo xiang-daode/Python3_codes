@@ -13,13 +13,14 @@ tag="p_" + str(0), width=1, fill="#006")
 s=0.0
 while s<3600: #总时间控制
     s=s+0.01 #旋转速度
-    for t in range(0, 3600, 5):  # 总循环多少次
-        g=s+t/3600;R=225
+    for t in range(0, 3600, 10):  # 总循环多少次
+        g=s+t/300;
 
-        #生成球面曲线点：
-        xc=R*cos(g*24)*cos(g*3)
-        yc=R*sin(g*24)*cos(g*3)
-        zc=R*sin(g*3)
+        #生成曲线点：
+        R=225
+        xc=R*cos(g*6)
+        yc=R*sin(g*5)
+        zc=R*sin(g*4)
 
         #绕Z轴旋转空间点：
         x1=xc*cos(s/2)-yc*sin(s/2)

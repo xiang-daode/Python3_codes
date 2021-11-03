@@ -6,7 +6,7 @@ import random as rnd
 
 # 使用tkinter绘图:
 root =Tk()
-canvas =Canvas(width=1200, height=800, bg='#004')
+canvas =Canvas(width=1200, height=800, bg='#FFF')
 canvas.pack()
 
 # 加载图片:
